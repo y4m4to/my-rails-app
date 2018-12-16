@@ -63,3 +63,9 @@ $ docker-compose down
 ```
 Ctrl + p + q
 ```
+
+### If you add a gem...
+If youa add a gem, you run the following command to create a docker image with gem added.
+```
+docker-build
+```
