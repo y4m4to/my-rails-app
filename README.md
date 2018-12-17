@@ -44,6 +44,10 @@ In that case, you nedd to delete a pid file.
 $ rm tmp/pids/server.pid
 ```
 
+### How to check the app status
+```
+docker-compose ps
+```
 
 ### How to stop the app
 Execute the command in the directory where the file is located.
@@ -68,4 +72,24 @@ Ctrl + p + q
 If youa add a gem, you run the following command to create a docker image with gem added.
 ```
 docker-build
+```
+
+### How to test
+```
+docker-compose exec web bundle exec rspec ./past/to/test/target/
+```
+
+### How to create a migration
+```
+docker-compose exec web bundle exec rails g migration ClassName fieldName:Type
+```
+
+Example
+```
+docker-compose exec web bundle exec rails g migration AddBirthdayToUser birthday:date
+```
+
+### How to execute migration
+```
+docker-compose exec web bundle exec rails db:migarate
 ```
